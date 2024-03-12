@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block body %}
+    <div style="text-align: center;">
+    <h2 style="color: #04AA6D"> {{ msg }}</h2>
+    </div>
+    <div style="text-align: center;">
+    <h1 style="color:#721c24">Welcome to Employee Management System</h1>
+    </div>
+    <h2 align="center">
+    <a href="{% url 'showemp' %}" id="link">EmpDetails</a><br>
+    <a href="{% url 'empins' %}" id="link">InsertEmp</a><br>
+    <a href="{% url 'upemp' %}" id="link">UpdateEmp</a><br>
+    <a href="{% url 'delemp' %}" id="link">DeleteEmp</a><br>
+    </h2>
+{% endblock %}

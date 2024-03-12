@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Deleting Employee Record{% endblock %}
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block body %}
+{{ msg }}
+<form method="post" action="{% url 'delemp' %}">
+     {% csrf_token %}
+    <div class="form-group">
+        <label>Eid:</label>
+        <input type="number" class="form-control" id="eid" name="eid" required placeholder="Please enter Eid">
+    </div>
+     <button type="submit" class="btn btn-primary">Search</button>
+</form>
+{% endblock %}

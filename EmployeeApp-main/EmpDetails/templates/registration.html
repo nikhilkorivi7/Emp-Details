@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Registration{% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block body %}
+<form method="post" action="{% url 'reguser' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" class="form-control" id="fname" name="fstname" required placeholder="Please enter first name">
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" class="form-control" id="lname" name="lstname" required placeholder="Please enter first name">
+    </div>
+    <div class="form-group">
+        <label>User Name:</label>
+        <input type="text" class="form-control" id="uname" name="usrname" required placeholder="Please enter user name">
+    </div>
+        <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" id="psw" name="pswd" required placeholder="Please enter password">
+    </div>
+    <div class="form-group">
+        <label>Mail-Id:</label>
+        <input type="text" class="form-control" id="mail" name="mailid" required placeholder="Please enter mailid">
+    </div>
+    <div class="form-group">
+        <label>Phone:</label>
+        <input type="text" class="form-control" id="phn" name="phone" required placeholder="Please enter phone">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Table{% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block body %}
+{{ msg }}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Emp Id</th>
+        <th>Emp Name</th>
+      <th>Emp Salary</th>
+        <th>Emp Age</th>
+        <th>Emp DeptNo</th>
+    </tr>
+  </thead>
+    <tbody>
+        {% for rec in emprecs %}
+             <tr>
+                  <td>{{ rec.eid }}</td>
+                  <td>{{ rec.ename }}</td>
+                  <td>{{ rec.salary }}</td>
+                  <td>{{ rec.age }}</td>
+                  <td>{{ rec.deptno}}</td>
+             </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
